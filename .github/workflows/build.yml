@@ -1,0 +1,16 @@
+name: Project
+on: push
+jobs:
+    deploy:
+        runs-on: ubuntu latest
+        steps:
+            - name: Get code
+              uses: actions/checkout@v4
+            - name: Install dependencies
+              run: |
+                sudo apt install python3
+                sudo apt install python3-pip
+                pip install numpy
+            - name: Run script
+              run: python3 idk.py
+                
