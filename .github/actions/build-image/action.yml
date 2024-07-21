@@ -7,6 +7,6 @@ runs:
           uses: actions/checkout@v4
         - name: Build Image
           run: |
-            ls ./../../../
+            ls .
             docker build ./../../../ -t image:latest
           shell: bash
