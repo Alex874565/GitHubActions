@@ -1,5 +1,8 @@
 name: 'Build'
 description: 'Build the Image'
 runs:
-    using: 'docker'
-    image: './../../../Dockerfile'
+    using: 'composite'
+    steps:
+        - name: Build Image
+          run: docker build ./../../../ -t image:latest
+          shell: bash
