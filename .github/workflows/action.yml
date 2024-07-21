@@ -19,4 +19,4 @@ jobs:
         - name: Build Image
           uses: ./.github/actions/build-image
         - name: Run Image
-          run: docker run
+          run: docker run --name python:latest 

@@ -1,5 +1,5 @@
-name: 'Test'
-description: 'Test the code '
+name: 'Build'
+description: 'Build the Image'
 runs:
     using: 'docker'
     image: './../../../Dockerfile'
