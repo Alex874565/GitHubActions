@@ -11,13 +11,6 @@ runs:
         - name: Start Minikube
           run: minikube start
           shell: bash
-        - name: Download Image Artifact
-          uses: actions/download-artifact@v3
-        - name: Load Image
-          run: |
-            ls
-            docker load -i image/image.tar
-          shell: bash
         - name: Deploy Image
           run: minikube kubectl -- apply --filename pod.yml
           shell: bash

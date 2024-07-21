@@ -24,6 +24,11 @@ jobs:
       steps:
         - name: Get Code
           uses: actions/checkout@v4
+        - name: Download Image Artifact
+          uses: actions/download-artifact@v3
+        - name: Load Image
+          run: docker load -i image/image.tar
+          shell: bash
         - name: Deploy Image
           uses: ./.github/actions/deploy
         - name: See Images

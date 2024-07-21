@@ -6,7 +6,7 @@ metadata:
     name: appPod
 spec:
   containers:
-  - name: appContainer
+  - name: appcontainer
     image: image:latest
     resources:
       limits:
