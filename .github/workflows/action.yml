@@ -17,9 +17,7 @@ jobs:
         - name: Get Code
           uses: actions/checkout@v4
         - name: Build Image
-          uses: ./.github/actions/build
-        - name: Show Images
-          run: minikube image ls
+          uses: ./.github/actions/build 
     deploy:
       needs: build
       runs-on: ubuntu-latest
