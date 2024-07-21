@@ -5,4 +5,4 @@ WORKDIR /app
 
 RUN ls
 
-ENTRYPOINT ["python", "main.py"]
+ENTRYPOINT ["python", "/main.py"]
