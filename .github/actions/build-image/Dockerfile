@@ -1,6 +1,6 @@
 FROM python:latest
 
-COPY ./src /app
+COPY ../../src /app
 WORKDIR /app
 
 ENTRYPOINT ["python", "main.py"]
