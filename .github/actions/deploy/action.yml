@@ -14,7 +14,9 @@ runs:
         - name: Download Image Artifact
           uses: actions/download-artifact@v3
         - name: Load Image
-          run: docker load -i image.tar
+          run: |
+            ls
+            docker load -i image/image.tar
           shell: bash
         - name: Deploy Image
           run: minikube kubectl -- apply --filename pod.yml
