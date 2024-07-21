@@ -4,5 +4,5 @@ runs:
     using: 'composite'
     steps:
         - name: Deploy Image
-          run: minikube kubectl apply -f pod.yml
+          run: minikube kubectl -- apply --filename pod.yml
           shell: bash
