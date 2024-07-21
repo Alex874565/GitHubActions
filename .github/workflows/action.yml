@@ -14,9 +14,15 @@ jobs:
       needs: test
       runs-on: ubuntu-latest
       steps:
-        - name: Get code
-          uses: actions/checkout@v4
         - name: Build Image
           uses: ./.github/actions/build
         - name: Show Images
           run: minikube image ls
+    deploy:
+      needs: build
+      runs-on: ubuntu-latest
+      steps:
+        - name: Deploy Image
+          uses: ./.github/actions/deploy
+        - name: See Images
+          run: minikube kubectl get pods
