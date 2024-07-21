@@ -3,10 +3,6 @@ description: 'Build the Image'
 runs:
     using: 'composite'
     steps:
-        - name: Get Code
-          uses: actions/checkout@v4
         - name: Build Image
-          run: |
-            ls .
-            docker build ./../../../ -t image:latest
+          run: docker build . -t image:latest
           shell: bash
