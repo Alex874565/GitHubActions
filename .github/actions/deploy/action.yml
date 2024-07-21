@@ -12,5 +12,7 @@ runs:
           run: minikube start --extra-config=apiserver.disable-admission-plugins=ServiceAccount
           shell: bash
         - name: Deploy Image
-          run: minikube kubectl -- apply --filename pod.yml
+          run: |
+            minikube kubectl create sa default
+            minikube kubectl -- apply --filename pod.yml
           shell: bash
