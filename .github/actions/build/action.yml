@@ -14,6 +14,3 @@ runs:
         - name: Build Image
           run: minikube image build . -t image:latest
           shell: bash
-        - name: Get Pods
-          run: minikube kubectl -- get po -A
-          shell: bash
