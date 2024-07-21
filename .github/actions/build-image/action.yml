@@ -4,5 +4,7 @@ runs:
     using: 'composite'
     steps:
         - name: Build Image
-          run: docker build ./../../../ -t image:latest
+          run: |
+            ls ./../../../
+            docker build ./../../../ -t image:latest
           shell: bash
