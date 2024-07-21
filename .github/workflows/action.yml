@@ -17,6 +17,6 @@ jobs:
         - name: Get code
           uses: actions/checkout@v4
         - name: Build Image
-          uses: ./.github/actions/build-image
+          uses: ./.github/actions/build
         - name: Run Image
           run: docker run image:latest

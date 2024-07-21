@@ -1,0 +1,19 @@
+name: 'Build'
+description: 'Build the Image'
+runs:
+    using: 'composite'
+    steps:
+        - name: Install Minikube
+          run: |
+            curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+            sudo install minikube-linux-amd64 /usr/local/bin/minikube && rm minikube-linux-amd64
+          shell: bash
+        - name: Start Minikube
+          run: minikube start
+          shell: bash
+        - name: Build Image
+          run: docker build . -t image:latest
+          shell: bash
+        - name: Get Pods
+          run: minikube kubectl -- get po -A
+          shell: bash
