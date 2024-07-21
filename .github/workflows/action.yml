@@ -20,6 +20,6 @@ jobs:
           uses: ./.github/actions/build-image
         - name: Show Image ID
           id: image-id
-          run: docker images | awk '{print $1}' | awk 'NR==2'
+          run: echo "id=$(docker images | awk '{print $1}' | awk 'NR==2') >> "$GITHUB_OUTPUT"
         - name: Run Image
-          run: docker run ${{steps.image-id.outputs}}
+          run: docker run ${{steps.image-id.outputs.id}}
