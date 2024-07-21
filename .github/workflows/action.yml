@@ -4,10 +4,19 @@ jobs:
     test:
         runs-on: ubuntu-latest
         steps:
-            - name: Get code
+            - name: Checkout code
               uses: actions/checkout@v4
             - name: Install dependencies
               run: sudo apt install python3
-            - name: Run tests
-              run: python3 test.py
-                
+            - name: Test code
+              uses: python3 test.py
+    build:
+      needs: test
+      runs-on: ubuntu-latest
+      steps:
+        - name: Get code
+          uses: actions/checkout@v4
+        - name: Build Image
+          uses: ./.github/actions/build-image
+        - name: Run Image
+          run: docker run
