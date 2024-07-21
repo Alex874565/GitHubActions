@@ -10,11 +10,8 @@ jobs:
               run: |
                 sudo apt install python3
                 sudo apt install python3-pip
-                pip install re
                 pip install collections
                 pip install os
-            - name: Run script
-              run: python3 main.py
             - name: Run tests
               run: python3 test.py
                 
