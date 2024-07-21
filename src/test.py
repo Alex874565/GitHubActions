@@ -2,7 +2,7 @@ import unittest
 from main import *
 
 class Test(unittest.TestCase):
-    log_entries, errors = count_logs("./src/testfile.txt")
+    log_entries, errors = count_logs("./testfile.txt")
 
     # Log Identification Test
     def test_count_logs(self):
@@ -90,7 +90,7 @@ class Test(unittest.TestCase):
         # Test File Equality
         actual = "\nThird of the day with the most failed runs:"
         actual += "\n00:00:00-07:59:59: 1 failures"
-        log_entries2, errors2 = count_logs("./src/testfile.txt")
+        log_entries2, errors2 = count_logs("./testfile.txt")
         self.assertEqual(log_entries2, self.log_entries)
         self.assertEqual(most_failed_third_of_day(self.log_entries), actual)
 

@@ -227,7 +227,7 @@ def calculate_failure_rate(log_entries):
     return output
 
 def main():
-    filename = './src/output.txt'
+    filename = './output.txt'
     log_entries, errors = count_logs(filename)
     print(errors)
     #requirments
