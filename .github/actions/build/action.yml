@@ -12,7 +12,7 @@ runs:
           run: minikube start
           shell: bash
         - name: Build Image
-          run: docker build . -t image:latest
+          run: minikube image build . -t image:latest
           shell: bash
         - name: Get Pods
           run: minikube kubectl -- get po -A
